@@ -124,3 +124,11 @@
   path = .gitconfig-A17
 [includeIf "gitdir:~/Code/DecimalStudios/"]
   path = .gitconfig-DecimalStudios
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true
+[user]
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAK4NfgtsjtErjRuSqkfhdAJPGX2RLWKfxUwQTS/W8/j
