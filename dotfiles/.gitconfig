@@ -1,0 +1,126 @@
+[user]
+	email = antonin.caudron@gmail.com
+	name = antonin caudron
+[push]
+	default = simple
+	autoSetupRemote = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[alias]
+	delete-merged = "!git branch --merged | grep -v '^\\*\\|master\\|main' | xargs git branch -d"
+	br = branch
+	ci = commit
+	co = checkout
+	ff = rebase origin
+	init-main = !git init && git symbolic-ref HEAD refs/heads/main
+	local-branches = !git branch -vv | cut -c 3- | awk '$3 !~/\\[/ { print $1 }'
+	ma = merge --abort
+	mg = merge --no-ff
+	pick = cherry-pick
+	pristine = reset --hard
+	ql = log --abbrev-commit --pretty=oneline
+	qlm = log --abbrev-commit --pretty=oneline --merges
+	qlr = log --reverse --abbrev-commit --pretty=oneline
+	ra = rebase --abo
+	rb = rebase
+	recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
+	ru = remote update
+	rup = remote update --prune
+	scr = !"git svn dcommit"
+	sfr = !"git svn fetch && git svn rebase"
+	st = status
+	sw = switch
+	tree = log --graph --pretty=format:\"%h - %s (%cr)\" --abbrev-commit --date=relative
+	undo = reset --soft HEAD^
+	up = pull --rebase origin
+	wip = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)' refs/heads
+	zap = clean -x -d -f
+	unstage = reset HEAD
+	set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
+	share = !git push --set-upstream origin `git symbolic-ref --short HEAD`
+	merge-into = !sh -c '_CURRENT_BRANCH=$(git symbolic-ref --short HEAD) && git checkout $1 && git pull && git merge --no-ff $_CURRENT_BRANCH' -
+	aliases = !git config --list | grep ^alias\\. | cut -c 7- | grep -Ei --color \"$1\" "#"
+[core]
+	excludesfile = ~/.gitignore_global
+[color "status"]
+	branch = 5 normal
+	added = 10 normal
+	updated = 10 normal
+	localbranch = 5 normal
+	changed = 11 normal
+	header = normal
+	remotebranch = 2 normal
+	nobranch = 1 normal italic
+	unmerged = 9 normal
+	untracked = normal dim
+[color "branch"]
+	plain = 5 normal dim
+	remote = 2 normal dim
+	current = 5 normal
+	local = 5 normal dim
+	upstream = 2 normal
+[color "remote"]
+	hint = normal dim
+	success = 2 normal
+	error = 1 normal
+	warning = 3 normal
+[color "interactive"]
+	header = 8 normal bold
+	prompt = 15 4
+	help = 8 normal
+	error = 1 normal italic
+[color "diff"]
+	commit = 3 normal
+	newMoved = 14 normal
+	oldMovedAlternativeDimmed = 4 normal dim
+	frag = 8 normal ul
+	oldMovedAlternative = 12 normal dim
+	contextBold = normal bold
+	newBold = 10 normal bold
+	context = normal
+	oldMoved = 14 normal dim
+	oldBold = 9 normal dim bold
+	newMovedDimmed = 6 normal
+	func = 8 normal ul
+	meta = 8 normal
+	newDimmed = 2 normal
+	newMovedAlternative = 12 normal
+	new = 10 normal
+	newMovedAlternativeDimmed = 4 normal
+	whitespace = normal 9
+	oldMovedDimmed = 6 normal dim
+	oldDimmed = 1 normal dim
+	old = 9 normal dim
+[color "decorate"]
+	branch = 5 normal
+	tag = 3 normal
+	remotebranch = 2 normal
+	stash = 8 normal
+	grafted = 1 normal italic
+	HEAD = 5 normal dim
+[diff]
+	colorMoved = zebra
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+[rerere]
+	enabled = true
+[merge]
+	conflictstyle = diff3
+[maintenance]
+	repo = /Users/antonin/.zsh-plugins/zsh-znap
+	repo = /Users/antonin/.zsh-plugins/romkatv/powerlevel10k
+	repo = /Users/antonin/.zsh-plugins/marlonrichert/zsh-autocomplete
+	repo = /Users/antonin/.zsh-plugins/ohmyzsh/ohmyzsh
+	repo = /Users/antonin/.zsh-plugins/zsh-users/zsh-autosuggestions
+	repo = /Users/antonin/.zsh-plugins/zsh-users/zsh-syntax-highlighting
+[checkout]
+	defaultRemote = origin
+[includeIf "gitdir:~/Code/A17/"]
+  path = .gitconfig-A17
+[includeIf "gitdir:~/Code/DecimalStudios/"]
+  path = .gitconfig-DecimalStudios

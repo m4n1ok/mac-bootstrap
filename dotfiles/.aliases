@@ -1,0 +1,15 @@
+alias pa="php artisan"
+alias dmg="brew install --cask --appdir=/Applications"
+alias hosts='code /etc/hosts'
+alias sshconfig="code ~/.ssh/config"
+
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+
+alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+
+alias ls='lsd'
+
+alias dep='$(composer global config bin-dir --absolute 2>/dev/null)/dep'
