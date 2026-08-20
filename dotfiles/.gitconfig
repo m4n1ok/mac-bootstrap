@@ -45,7 +45,7 @@
 	aliases = !git config --list | grep ^alias\\. | cut -c 7- | grep -Ei --color \"$1\" "#"
 [core]
 	excludesfile = ~/.gitignore_global
-	editor = cursor --wait
+	editor = devin-desktop --wait
 [color "status"]
 	branch = 5 normal
 	added = 10 normal

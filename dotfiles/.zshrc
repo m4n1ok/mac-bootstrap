@@ -59,3 +59,6 @@ fi
 
 # aliases
 source ~/.aliases
+
+# Added by Devin
+export PATH="/Users/antonin/.codeium/windsurf/bin:$PATH"
