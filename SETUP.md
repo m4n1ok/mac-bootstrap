@@ -17,8 +17,10 @@
 
 1. PHP Monitor → Setup Assistant (PHP / Composer / Valet)
 2. `mise use -g node@lts` (pnpm via corepack or mise)
-3. Import `config/iterm-profile.json` into iTerm2
-4. Import `config/antonin.code-profile` into Cursor (and VS Code if you use it): **Profiles → Import Profile…**
-5. Sign into Slack / etc. (1Password already done pre-clone)
-6. Confirm agent in a new terminal: `echo $SSH_AUTH_SOCK` and `ssh -T git@github.com`
-7. NTFS (only if needed): https://gist.github.com/bjorgvino/f24e5c079b92f921b765
+3. `bash install-skills.sh` — agent skills from `config/skills.txt` (`npx skills add … -g --all`)
+4. Open Claude Code once so plugins/marketplaces from `~/.claude/settings.json` install
+5. Import `config/iterm-profile.json` into iTerm2
+6. Import `config/antonin.code-profile` into Cursor (and VS Code if you use it): **Profiles → Import Profile…**
+7. Sign into Slack / etc. (1Password already done pre-clone)
+8. Confirm agent in a new terminal: `echo $SSH_AUTH_SOCK` and `ssh -T git@github.com`
+9. NTFS (only if needed): https://gist.github.com/bjorgvino/f24e5c079b92f921b765

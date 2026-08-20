@@ -61,14 +61,15 @@ moving or deleting the directory breaks every one of them.
 
 1. Ensures Command Line Tools (waits for GUI if needed)
 2. Homebrew + `brew bundle` (`Brewfile`)
-3. Symlinks `dotfiles/` → `$HOME`
+3. Symlinks `dotfiles/` → `$HOME`, plus `config/claude/settings.json` and `config/cursor/mcp.json`
 4. Applies `settings.sh` (computer name prompt)
 
-**Not** via brew: PHP / Composer / Valet — PHP Monitor Setup Assistant.
+**Not** via brew: PHP / Composer / Valet — PHP Monitor Setup Assistant.  
+**Not** during bootstrap: agent skills (need Node) — `install-skills.sh` after mise.
 
 ## After bootstrap
 
-See [`SETUP.md`](SETUP.md) (iTerm + Cursor profile import, PHP Monitor, mise, etc.).
+See [`SETUP.md`](SETUP.md) (skills, Claude plugins, iTerm + Cursor profiles, PHP Monitor, mise, etc.).
 
 ## Layout
 
@@ -76,10 +77,14 @@ See [`SETUP.md`](SETUP.md) (iTerm + Cursor profile import, PHP Monitor, mise, et
 preflight.sh          # CLT + brew + 1Password (before private clone)
 Brewfile
 bootstrap.sh
+install-skills.sh     # npx skills add from config/skills.txt (after node)
 settings.sh
 symlink-dotfiles.sh
 dotfiles/
 config/
+  claude/settings.json
+  cursor/mcp.json
+  skills.txt
 SETUP.md
 ```
 
@@ -88,3 +93,5 @@ SETUP.md
 - `Brewfile` — packages
 - `COMPUTER_NAME` — skip name prompt
 - `dotfiles/` — shell / git
+- `config/skills.txt` — agent skill packages
+- `config/claude/settings.json` — Claude plugins / prefs (no local permissions)

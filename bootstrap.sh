@@ -64,8 +64,10 @@ Bootstrap done.
 Next (see SETUP.md):
   1. PHP Monitor → Setup Assistant (PHP / Composer / Valet)
   2. mise use -g node@lts
-  3. Import config/iterm-profile.json into iTerm2
-  4. Import config/antonin.code-profile into Cursor
-  5. ssh -T git@github.com  # confirm 1Password agent in a new terminal
+  3. bash install-skills.sh
+  4. Open Claude Code once (plugins from linked settings.json)
+  5. Import config/iterm-profile.json into iTerm2
+  6. Import config/antonin.code-profile into Cursor
+  7. ssh -T git@github.com  # confirm 1Password agent in a new terminal
 
 EOF

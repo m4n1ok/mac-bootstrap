@@ -1,0 +1,7 @@
+# owner/repo packages for: npx skills add <pkg> -g --all
+# Unique sources only — each repo may ship multiple skills.
+emilkowalski/skill
+JuliusBrussee/caveman
+vercel-labs/skills
+prismicio/skills
+sanity-io/agent-toolkit

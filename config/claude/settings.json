@@ -1,0 +1,35 @@
+{
+  "enabledPlugins": {
+    "andrej-karpathy-skills@karpathy-skills": true,
+    "superpowers@claude-plugins-official": true,
+    "ponytail@ponytail": true
+  },
+  "extraKnownMarketplaces": {
+    "karpathy-skills": {
+      "source": {
+        "source": "github",
+        "repo": "forrestchang/andrej-karpathy-skills"
+      }
+    },
+    "caveman": {
+      "source": {
+        "source": "github",
+        "repo": "JuliusBrussee/caveman"
+      }
+    },
+    "claude-code-workflows": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/wshobson/agents.git"
+      }
+    },
+    "ponytail": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/DietrichGebert/ponytail.git"
+      }
+    }
+  },
+  "effortLevel": "high",
+  "tui": "fullscreen"
+}

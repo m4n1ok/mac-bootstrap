@@ -40,3 +40,8 @@ for location in "$dotfiles"/.*; do
   [[ -f "$location" ]] || continue
   link "$location" "$HOME/$base" || true
 done
+
+# Claude + Cursor portable config (not whole ~/.claude — no sessions/cache/local)
+mkdir -p "$HOME/.claude" "$HOME/.cursor"
+link "$ROOT/config/claude/settings.json" "$HOME/.claude/settings.json" || true
+link "$ROOT/config/cursor/mcp.json" "$HOME/.cursor/mcp.json" || true
