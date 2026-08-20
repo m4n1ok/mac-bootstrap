@@ -31,5 +31,18 @@
     }
   },
   "effortLevel": "high",
-  "tui": "fullscreen"
+  "tui": "fullscreen",
+  "theme": "auto",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"SessionStart\",\"additionalContext\":\"Invoke the Skill tool with skill=\\\"caveman\\\" and args=\\\"full\\\" as your very first action this session, before doing anything else.\"}}'"
+          }
+        ]
+      }
+    ]
+  }
 }
