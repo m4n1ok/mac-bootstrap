@@ -1,8 +1,23 @@
 {
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"SessionStart\",\"additionalContext\":\"Invoke the Skill tool with skill=\\\"caveman\\\" and args=\\\"full\\\" as your very first action this session, before doing anything else.\"}}'"
+          }
+        ]
+      }
+    ]
+  },
   "enabledPlugins": {
     "andrej-karpathy-skills@karpathy-skills": true,
     "superpowers@claude-plugins-official": true,
-    "ponytail@ponytail": true
+    "ponytail@ponytail": true,
+    "figma@claude-plugins-official": true,
+    "shopify-ai-toolkit@claude-plugins-official": true,
+    "easing-wizard@claude-community": true
   },
   "extraKnownMarketplaces": {
     "karpathy-skills": {
@@ -28,21 +43,26 @@
         "source": "git",
         "url": "https://github.com/DietrichGebert/ponytail.git"
       }
+    },
+    "claude-plugins-official": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-official"
+      }
+    },
+    "claude-community": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-community"
+      }
     }
   },
   "effortLevel": "high",
+  "modelSettings": {
+    "claude-sonnet-5": {
+      "effortLevel": "medium"
+    }
+  },
   "tui": "fullscreen",
-  "theme": "auto",
-  "hooks": {
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"SessionStart\",\"additionalContext\":\"Invoke the Skill tool with skill=\\\"caveman\\\" and args=\\\"full\\\" as your very first action this session, before doing anything else.\"}}'"
-          }
-        ]
-      }
-    ]
-  }
+  "theme": "auto"
 }
