@@ -62,3 +62,5 @@ source ~/.aliases
 
 # Added by Devin
 export PATH="/Users/antonin/.codeium/windsurf/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
